@@ -25,10 +25,10 @@ class unbound (
     # This file differs from that in the package only by setting
     # RESOLVCONF_FORWARDERS to false.
     file { '/etc/default/unbound':
-      source  => 'puppet:///modules/unbound/unbound.default',
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0444',
+      source => 'puppet:///modules/unbound/unbound.default',
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0444',
     }
 
     # We require the defaults file be in place before installing the
@@ -43,10 +43,10 @@ class unbound (
 
     # Tripleo uses dhcp
     file { '/etc/dhcp/dhclient.conf':
-      source  => 'puppet:///modules/unbound/dhclient.conf.debian',
-      owner   => 'root',
-      group   => 'root',
-      mode    => '0444',
+      source => 'puppet:///modules/unbound/dhclient.conf.debian',
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0444',
     }
   }
 
