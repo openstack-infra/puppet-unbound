@@ -57,9 +57,11 @@ class unbound (
       ensure  => present,
     }
 
-    # HPCloud uses dhclient; tell dhclient to use our nameserver instead.
-    exec { '/usr/bin/printf "\nsupersede domain-name-servers 127.0.0.1;\n" >> /etc/dhcp/dhclient-eth0.conf':
-        unless => '/bin/grep -q "supersede domain-name-servers" /etc/dhcp/dhclient-eth0.conf'
+    file { '/etc/dhcp/dhclient-eth0.conf':
+      source => 'puppet:///modules/unbound/dhclient.conf.redhat',
+      owner  => 'root',
+      group  => 'root',
+      mode   => '0644',
     }
   }
 
