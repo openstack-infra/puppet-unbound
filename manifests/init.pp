@@ -65,6 +65,12 @@ class unbound (
     }
   }
 
+  if ($::osfamily == 'Suse') {
+    package { 'unbound':
+      ensure  => present,
+    }
+  }
+
   if ($install_resolv_conf) {
     # Rackspace uses static config files
     file { '/etc/resolv.conf':
