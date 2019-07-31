@@ -1,5 +1,3 @@
-# OpenStack Unbound Module
+# This repo has moved to OpenDev
 
-## Overview
-
-Configures Unbound.
+It can now be found at [https://opendev.org/opendev/puppet-unbound](https://opendev.org/opendev/puppet-unbound)
